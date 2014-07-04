@@ -28,11 +28,18 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'pry-rails'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

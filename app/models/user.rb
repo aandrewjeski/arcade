@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  has_many :trades, dependent: :destroy
+  has_one :wallet
+  belongs_to :network
+  belongs_to :user_leaderboard
+
+  validates :username, presence: true, length: { minimum: 6, maximum: 20 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
