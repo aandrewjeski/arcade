@@ -26,10 +26,10 @@ feature 'user views his or her own trades', %Q{
     expect(page).to have_content(trade.price_currency)
     expect(page).to have_content(trade.trade_type)
     expect(page).to have_content(trade.created_at)
-    expect(page).to have_content('Success')
+    expect(page).to have_content('Your transaction was successfully processed.')
   end
 
-  scenario 'User doesn\'t fill in form!' do
+  scenario 'User doesn\'t fill in form' do
     visit new_user_trade_path
     click_on 'Submit'
     expect(page).to have_content('can\'t be blank')

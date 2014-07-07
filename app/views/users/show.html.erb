@@ -1,0 +1,31 @@
+<h3><%= @user.username %>'s Console</h3>
+
+<p>Username: <%= @user.username %></p>
+<p>E-mail: <%= @user.email %></p>
+
+<div>
+<h4> Trade History </h4>
+</div>
+
+<br>
+
+<%= link_to 'Trade Console', new_user_trade_path %>
+
+<table style="width:500px">
+  <tr>
+    <th>Amount</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th>Type</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+    <% @user.trades.each do |trade| %>
+      <td><%= trade.amount %></td>
+      <td><%= trade.price %></td>
+      <td><%= trade.price_currency %></td>
+      <td><%= trade.trade_type %></td>
+      <td><%= trade.created_at %></td>
+    <% end %>
+  </tr>
+</table>
