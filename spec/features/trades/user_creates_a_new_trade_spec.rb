@@ -7,7 +7,7 @@ feature 'user views his or her own trades', %Q{
 } do
 
   # Acceptance Criteria:
-  # * I can see a list of my trades
+  # * I can create a trade
 
   before :each do
     sign_in_as(user)

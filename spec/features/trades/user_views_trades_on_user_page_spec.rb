@@ -22,6 +22,7 @@ feature 'user views his or her own trades', %Q{
       expect(page).to have_content(trade.amount)
       expect(page).to have_content(trade.price_currency)
       expect(page).to have_content(trade.trade_type)
+      expect(page).to have_content(trade.created_at)
     end
 
   end
