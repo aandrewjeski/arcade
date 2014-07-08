@@ -10,10 +10,12 @@ class TradesController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @trade = Trade.new
   end
 
   def create
+    @user = current_user
     @trade = current_user.trades.build(trade_params)
     if @trade.save
       redirect_to @trade, notice: 'Your transaction was successfully processed.'

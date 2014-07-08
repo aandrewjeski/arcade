@@ -9,7 +9,6 @@ feature 'user signs out', %Q{
   # Acceptance Criteria:
   # * I can successfully sign out of a user session
 
-feature 'User signs out.' do
   scenario 'User clicks on sign out' do
     user = FactoryGirl.create(:user)
 

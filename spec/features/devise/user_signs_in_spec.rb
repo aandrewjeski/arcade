@@ -9,7 +9,7 @@ feature 'user signs in', %Q{
   # Acceptance Criteria:
   # * I can sign up with a valid email and password
 
-feature 'User signs in.' do
+
   scenario 'User enters a valid email and password. Success!' do
     user = FactoryGirl.create(:user)
 

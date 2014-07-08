@@ -11,7 +11,6 @@ feature 'user changes his or her account details', %Q{
   # * I can change my email
   # * I can change my password
 
-feature 'User edits account info.' do
   scenario 'User enters valid email, username,
   new password and confirmation, and old password.' do
     user = FactoryGirl.create(:user)

@@ -9,7 +9,6 @@ feature 'user deletes his or her account', %Q{
   # Acceptance Criteria:
   # * I can cancel my account
 
-feature 'User deletes account.' do
   scenario 'User successfully deletes account' do
     user = FactoryGirl.create(:user)
 
@@ -34,4 +33,5 @@ feature 'User deletes account.' do
     expect(page).to have_content('Bye! Your account was successfully cancelled. We hope to see you again soon.')
     expect(User.count).to eq(0)
   end
+
 end

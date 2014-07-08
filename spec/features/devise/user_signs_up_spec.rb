@@ -9,7 +9,6 @@ feature 'user signs up', %Q{
   # Acceptance Criteria:
   # * I can sign up with a username, email, and password
 
-feature 'User signs up successfully.' do
   scenario 'User enters a valid username and password.' do
     visit new_user_registration_path
 

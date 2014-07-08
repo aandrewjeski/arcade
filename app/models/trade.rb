@@ -5,4 +5,9 @@ class Trade < ActiveRecord::Base
   validates :price, presence: true
   validates :user_id, presence: true
   validates :trade_type, presence: true
+
+  def total
+    price * amount
+  end
+
 end
