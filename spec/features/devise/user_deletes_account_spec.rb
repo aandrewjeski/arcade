@@ -1,5 +1,14 @@
 require 'rails_helper'
 
+feature 'user deletes his or her account', %Q{
+  As a user
+  I want to be able to delete my account
+  So that I my information is removed from the site
+} do
+
+  # Acceptance Criteria:
+  # * I can cancel my account
+
 feature 'User deletes account.' do
   scenario 'User successfully deletes account' do
     user = FactoryGirl.create(:user)

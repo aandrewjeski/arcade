@@ -1,5 +1,14 @@
 require 'rails_helper'
 
+feature 'user signs up', %Q{
+  As a user
+  I want to be able to sign up
+  So that I can use this website
+} do
+
+  # Acceptance Criteria:
+  # * I can sign up with a username, email, and password
+
 feature 'User signs up successfully.' do
   scenario 'User enters a valid username and password.' do
     visit new_user_registration_path

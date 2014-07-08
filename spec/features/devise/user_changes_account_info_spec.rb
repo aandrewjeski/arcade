@@ -1,5 +1,16 @@
 require 'rails_helper'
 
+feature 'user changes his or her account details', %Q{
+  As a user
+  I want to be able to edit my account
+  So that I can update my contact information
+} do
+
+  # Acceptance Criteria:
+  # * I can change my username
+  # * I can change my email
+  # * I can change my password
+
 feature 'User edits account info.' do
   scenario 'User enters valid email, username,
   new password and confirmation, and old password.' do
