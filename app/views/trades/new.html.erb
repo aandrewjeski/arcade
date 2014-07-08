@@ -1,0 +1,28 @@
+<h3>Make a Trade</h3>
+
+<%= form_for [@user, @trade] do |f| %>
+
+  <% if @trade.errors.any? %>
+    <ul>
+      <% @trade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>USD/BTC: <%= @trade.price %></p>
+
+  <div>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <p>Total: <%= @trade.total %></p>
+
+  <div>
+    <%= f.label :trade_type %>
+    <%= f.select(:trade_type, ['buy', 'sell']) %>
+  </div>
+
+  <%= f.submit 'Submit' %>
+<% end %>

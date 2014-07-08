@@ -1,6 +1,15 @@
 require 'rails_helper'
 
-feature 'User signs in.' do
+feature 'user signs in', %Q{
+  As a user
+  I want to be able to sign in
+  So that I can access the site's features
+} do
+
+  # Acceptance Criteria:
+  # * I can sign up with a valid email and password
+
+
   scenario 'User enters a valid email and password. Success!' do
     user = FactoryGirl.create(:user)
 
