@@ -10,7 +10,7 @@ feature 'user views his or her own trades', %Q{
     let(:user) { FactoryGirl.create(:user) }
 
     # Acceptance Criteria:
-      # * I can create a trade
+      # * I can view a list of recent trades
 
     scenario 'User sees a list of trades.' do
       trades = FactoryGirl.create_list(:trade, 3)
@@ -18,7 +18,8 @@ feature 'user views his or her own trades', %Q{
       sign_in_as(user)
       visit user_path(user)
 
-      trades.each do |trade|
+      user.trades.each do |trade|
+        expect(page).to have_content(trade.price)
         expect(page).to have_content(trade.amount)
         expect(page).to have_content(trade.total)
         expect(page).to have_content(trade.trade_type)

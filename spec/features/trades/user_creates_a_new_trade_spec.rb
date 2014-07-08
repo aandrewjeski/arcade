@@ -24,7 +24,7 @@ feature 'user views his or her own trades', %Q{
       click_on 'Submit'
 
       expect(page).to have_content(trade.price)
-      expect(page).to have_content('1.0')
+      expect(page).to have_content('1.5')
       expect(page).to have_content(trade.total)
       expect(page).to have_content(trade.trade_type)
       expect(page).to have_content(trade.created_at)
