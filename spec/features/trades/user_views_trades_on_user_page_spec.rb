@@ -6,8 +6,8 @@ feature 'user views his or her own trades', %Q{
   So that I can keep track of my transactions
 } do
 
-
-
+  context 'as an authenticated user' do
+    let(:user) { FactoryGirl.create(:user) }
 
     # Acceptance Criteria:
       # * I can create a trade
@@ -16,7 +16,7 @@ feature 'user views his or her own trades', %Q{
       trades = FactoryGirl.create_list(:trade, 3)
 
       sign_in_as(user)
-      visit user_path
+      visit user_path(user)
 
       trades.each do |trade|
         expect(page).to have_content(trade.price)
@@ -26,7 +26,7 @@ feature 'user views his or her own trades', %Q{
         expect(page).to have_content(trade.created_at)
       end
     end
-
+  end
 end
 
 

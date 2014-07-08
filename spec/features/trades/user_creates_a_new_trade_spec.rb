@@ -17,7 +17,7 @@ feature 'user views his or her own trades', %Q{
 
     scenario 'User creates a valid trade' do
       trade = FactoryGirl.create(:trade)
-      visit new_user_trade_path
+      visit new_user_trade_path(user)
 
       fill_in 'Amount', with: trade.amount
       fill_in 'Trade Type', with: trade.trade_type
@@ -32,7 +32,7 @@ feature 'user views his or her own trades', %Q{
     end
 
     scenario 'User doesn\'t fill in form' do
-      visit new_user_trade_path
+      visit new_user_trade_path(user)
       click_on 'Submit'
       expect(page).to have_content('can\'t be blank')
     end
