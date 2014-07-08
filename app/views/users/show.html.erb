@@ -9,7 +9,7 @@
 
 <br>
 
-<%= link_to 'Trade Console', new_user_trade_path %>
+<%= link_to 'Trade Console', new_user_trade_path(@user) %>
 
 <table style="width:500px">
   <tr>
@@ -23,7 +23,7 @@
     <% @user.trades.each do |trade| %>
       <td><%= trade.amount %></td>
       <td><%= trade.price %></td>
-      <td><%= trade.price_currency %></td>
+      <td><%= trade.total %></td>
       <td><%= trade.trade_type %></td>
       <td><%= trade.created_at %></td>
     <% end %>

@@ -18,9 +18,10 @@ class TradesController < ApplicationController
     @user = current_user
     @trade = current_user.trades.build(trade_params)
     if @trade.save
-      redirect_to @trade, notice: 'Your transaction was successfully processed.'
+      redirect_to user_path(@user), notice: 'Your transaction was successfully processed.'
     else
-      render action: 'new'
+      flash.now[:notice] = "Your transaction could not be processed."
+      render :new
     end
   end
 

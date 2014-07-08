@@ -19,9 +19,8 @@ feature 'user views his or her own trades', %Q{
       visit user_path(user)
 
       trades.each do |trade|
-        expect(page).to have_content(trade.price)
         expect(page).to have_content(trade.amount)
-        expect(page).to have_content(trade.price_currency)
+        expect(page).to have_content(trade.total)
         expect(page).to have_content(trade.trade_type)
         expect(page).to have_content(trade.created_at)
       end

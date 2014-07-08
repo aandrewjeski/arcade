@@ -7,7 +7,7 @@ class Trade < ActiveRecord::Base
   validates :trade_type, presence: true
 
   def total
-    price * amount
+    price.to_s.to_d * amount.to_s.to_d
   end
 
 end
