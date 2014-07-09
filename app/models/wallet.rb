@@ -1,9 +1,21 @@
 class Wallet < ActiveRecord::Base
   belongs_to :user
 
-  def update_wallet
+  # def update_btc_balance
+  #   if self.trades.trade_type == 'buy'
+  #     self.update(balance_btc: self.trades.sum(:amount))
+  #   else
+  #     self.update(balance_btc: self.trades.)
+  # end
+  def btc_total
+    # Find out value of all trades in this wallet
+    # add to starting btc amount
+  end
+
+  def usd_total
 
   end
+
   # def update_btc_balance!
   #   if trade_type == 'buy'
   #     @btc_balance += @amount

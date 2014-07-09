@@ -9,15 +9,11 @@ class Trade < ActiveRecord::Base
   validates :user_id, presence: true
   validates :trade_type, presence: true
 
-  def find_total
-    price.to_s.to_d * amount.to_s.to_d
-  end
-
-  def update_amount
-    if trade_type = 'buy'
-      amount +=
+  def calculate_total
+    if trade_type == 'buy'
+      amount * price * -1
     else
-      amount -=
+      amount * price
     end
   end
 
