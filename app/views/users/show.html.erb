@@ -3,15 +3,28 @@
 <p>Username: <%= @user.username %></p>
 <p>E-mail: <%= @user.email %></p>
 
+<hr>
+
 <div>
-<h4> Trade History </h4>
+<h3> Wallet </h3>
 </div>
 
-<br>
+<p> BTC Balance: </p>
+<p> USD Balance: </p>
 
-<%= link_to 'Trade Console', new_user_trade_path(@user) %>
+<hr>
 
-<table style="width:500px">
+<div>
+  <h3> Trading Console </h3>
+</div>
+
+<%= link_to 'Buy/Sell Coins', new_user_trade_path(@user) %>
+
+<div>
+  <h4> Trade History </h4>
+</div>
+
+<table style="width:400px">
   <tr>
     <th>Amount</th>
     <th>Price</th>
@@ -19,13 +32,15 @@
     <th>Type</th>
     <th>Time</th>
   </tr>
-  <tr>
+  <div>
     <% @user.trades.each do |trade| %>
-      <td><%= trade.amount %></td>
-      <td><%= trade.price %></td>
-      <td><%= trade.total %></td>
+      <tr>
+      <td><%= trade.amount %> BTC</td>
+      <td>$<%= trade.price %></td>
+      <td>$<%= trade.total %></td>
       <td><%= trade.trade_type %></td>
       <td><%= trade.created_at %></td>
+      </tr>
     <% end %>
-  </tr>
+  </div>
 </table>

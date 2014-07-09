@@ -1,5 +1,8 @@
 class Trade < ActiveRecord::Base
+  # after_create :update_wallet
+
   belongs_to :user
+  belongs_to :wallet
 
   validates :amount, presence: true
   validates :price, presence: true

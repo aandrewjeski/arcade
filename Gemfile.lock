@@ -30,6 +30,8 @@ GEM
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
+    btce (0.5.1)
+      monkey-patch
     builder (3.2.2)
     capybara (2.3.0)
       mime-types (>= 1.16)
@@ -78,6 +80,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
+    monkey-patch (0.0.16)
+      activesupport
     multi_json (1.10.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
@@ -181,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  btce
   capybara
   coffee-rails (~> 4.0.0)
   devise

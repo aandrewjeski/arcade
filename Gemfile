@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use postgresql as the database for Active Record
@@ -22,6 +21,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
+
+gem 'btce'
 
 group :doc do
   gem 'sdoc', require: false
@@ -54,3 +55,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+ruby '2.0.0'
