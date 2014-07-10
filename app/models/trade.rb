@@ -7,7 +7,7 @@ class Trade < ActiveRecord::Base
   validates :user_id, presence: true
   validates :trade_type, presence: true
 
-  def calculate_total
+  def calculate_total_USD
     if amount == nil || price == nil
       nil
     else
@@ -19,8 +19,24 @@ class Trade < ActiveRecord::Base
     end
   end
 
-  def update_total
-    update(total: calculate_total)
+  def update_total_USD
+    update(total: calculate_total_USD)
+  end
+
+  def calculate_total_BTC
+    if amount == nil || price == nil
+      nil
+    else
+      if trade_type == 'buy'
+        amount
+      else
+        amount * -1
+      end
+    end
+  end
+
+  def update_total_BTC
+    update(amount: calculate_total_BTC)
   end
 
 end
