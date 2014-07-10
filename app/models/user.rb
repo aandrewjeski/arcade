@@ -18,8 +18,10 @@ class User < ActiveRecord::Base
 
   private
 
-  def initialize_with_wallet
-    Wallet.create(user: self)
+    def initialize_with_wallet
+      Wallet.create(user: self)
+    end
+
   end
 
 end
