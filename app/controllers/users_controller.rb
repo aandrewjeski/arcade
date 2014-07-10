@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @trades = current_user.trades.last(10)
+    @wallet = current_user.wallet
   end
 
 end

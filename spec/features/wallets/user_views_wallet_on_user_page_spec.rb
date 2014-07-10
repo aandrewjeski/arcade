@@ -13,14 +13,14 @@ feature 'user views his or her own wallet', %Q{
       # * I can view a list of recent trades
 
     scenario 'User sees a list of trades.' do
-      wallet = FactoryGirl.create_list(:wallet)
+      wallet = FactoryGirl.create(:wallet, balance_btc: 0.0, balance_usd: 750)
+      trade = FactoryGirl.create(:trade, amount: 1.5, price: 500, trade_type: "buy", wallet: wallet)
 
-      sign_in_as(user)
-      visit user_path(user)
+      sign_in_as(wallet.user)
+      visit user_path(wallet.user)
 
-      expect(page).to have_content(wallet.balance_btc)
-      expect(page).to have_content(wallet.balance_usd)
-      expect(page).to have_content(wallet.profits)
+      expect(page).to have_content(wallet.btc_total)
+      expect(page).to have_content(wallet.usd_total)
 
     end
   end

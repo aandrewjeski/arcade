@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @trades = Trade.last(10)
@@ -19,7 +20,7 @@ class TradesController < ApplicationController
     @trade.wallet = current_user.default_wallet
     @trade.update_total
     if @trade.save
-      redirect_to user_path(@user), notice: 'Your transaction was successfully processed.'
+      redirect_to user_path(current_user), notice: 'Your transaction was successfully processed.'
     else
       flash.now[:notice] = "Your transaction could not be processed."
       render :new

@@ -1,5 +1,4 @@
 class Trade < ActiveRecord::Base
-
   belongs_to :user
   belongs_to :wallet
 
@@ -9,6 +8,7 @@ class Trade < ActiveRecord::Base
   validates :trade_type, presence: true
 
   def calculate_total
+    binding.pry
     if trade_type == 'buy'
       amount * price * -1
     else
