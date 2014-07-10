@@ -1,5 +1,4 @@
 class Trade < ActiveRecord::Base
-  after_create :update_wallet
 
   belongs_to :user
   belongs_to :wallet
@@ -17,8 +16,8 @@ class Trade < ActiveRecord::Base
     end
   end
 
-  def update_wallet
-
+  def update_total
+    update(total: calculate_total)
   end
 
 end

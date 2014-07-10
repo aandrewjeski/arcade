@@ -17,7 +17,7 @@ class TradesController < ApplicationController
   def create
     @trade = current_user.trades.build(trade_params)
     @trade.wallet = current_user.default_wallet
-    @trade.total = @trade.calculate_total
+    @trade.update_total
     if @trade.save
       redirect_to user_path(@user), notice: 'Your transaction was successfully processed.'
     else

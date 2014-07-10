@@ -1,4 +1,5 @@
 class Wallet < ActiveRecord::Base
+  has_many :trades
   belongs_to :user
 
   # def update_btc_balance
@@ -8,12 +9,17 @@ class Wallet < ActiveRecord::Base
   #     self.update(balance_btc: self.trades.)
   # end
   def btc_total
-    # Find out value of all trades in this wallet
-    # add to starting btc amount
+    sql = "SELECT SUM(amount) FROM trades"
+    final_amount = ActiveRecord::Base.connection.execute(sql)
+    final_amount.to_a.first["sum"].to_d
   end
 
   def usd_total
-
+    starting_amount = 100000
+    sql = "SELECT SUM(total) FROM trades"
+    final_amount = ActiveRecord::Base.connection.execute(sql)
+    final_amount = starting_amount.to_d - final_amount.to_a.first["sum"].to_d
+    final_amount.to_d
   end
 
   # def update_btc_balance!
