@@ -8,11 +8,14 @@ class Trade < ActiveRecord::Base
   validates :trade_type, presence: true
 
   def calculate_total
-    binding.pry
-    if trade_type == 'buy'
-      amount * price * -1
+    if amount == nil || price == nil
+      nil
     else
-      amount * price
+      if trade_type == 'buy'
+        amount * price * -1
+      else
+        amount * price
+      end
     end
   end
 

@@ -19,8 +19,8 @@ feature 'user views his or her own wallet', %Q{
       sign_in_as(wallet.user)
       visit user_path(wallet.user)
 
-      expect(page).to have_content(wallet.btc_total)
-      expect(page).to have_content(wallet.usd_total)
+      expect(page).to have_content(user.default_wallet.btc_total)
+      expect(page).to have_content(user.default_wallet.usd_total)
 
     end
   end

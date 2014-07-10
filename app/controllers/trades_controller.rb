@@ -22,8 +22,7 @@ class TradesController < ApplicationController
     if @trade.save
       redirect_to user_path(current_user), notice: 'Your transaction was successfully processed.'
     else
-      flash.now[:notice] = "Your transaction could not be processed."
-      render :new
+      redirect_to user_path(current_user), notice: 'Sorry, we were unable to process your transaction. Please try again.'
     end
   end
 
