@@ -34,7 +34,7 @@ feature 'user views his or her own trades', %Q{
     scenario 'User doesn\'t fill in form' do
       visit new_user_trade_path(user)
       click_on 'Submit'
-      expect(page).to have_content('Sorry, we were unable to process your transaction. Please try again.')
+      expect(page).to have_content('We were unable to process your transaction.')
     end
   end
 end

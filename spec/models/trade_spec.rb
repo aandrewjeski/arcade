@@ -15,13 +15,13 @@ RSpec.describe Trade, :type => :model do
   it { should have_valid(:user_id).when(1) }
   it { should_not have_valid(:user_id).when(nil, '') }
 
-  describe 'adjust_trade' do
+  describe "adjust_trade" do
     it 'adjusts buy amount' do
       trade = FactoryGirl.build(:trade, amount: 1.5, price: 500, trade_type: "buy")
       expect(trade.calculate_total).to eql(-750)
     end
 
-    it 'adjusts sell amount' do
+    it "adjusts sell amount" do
       trade = FactoryGirl.build(:trade, amount: 1.5, price: 500, trade_type: "sell")
       expect(trade.calculate_total).to eql(750)
     end
