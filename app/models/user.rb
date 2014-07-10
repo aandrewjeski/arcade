@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :initialize_with_wallet
   has_many :trades
   has_one :wallet
   belongs_to :network
@@ -14,4 +15,11 @@ class User < ActiveRecord::Base
   def default_wallet
     self.wallet
   end
+
+  private
+
+  def initialize_with_wallet
+    Wallet.create(user: self)
+  end
+
 end
