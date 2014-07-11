@@ -9,6 +9,7 @@ class Wallet < ActiveRecord::Base
       sql = "SELECT SUM(amount) FROM trades"
       final_amount = ActiveRecord::Base.connection.execute(sql)
       final_amount.to_a.first["sum"].to_d
+    end
   end
 
   def usd_total
