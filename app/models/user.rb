@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   after_create :initialize_with_wallet
+
   has_many :trades
   has_one :wallet
   belongs_to :network
