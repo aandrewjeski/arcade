@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+trade = Trade.create(user_id: 1, wallet_id: 1, amount: 1, trade_type: 'buy')

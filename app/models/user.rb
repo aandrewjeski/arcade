@@ -22,6 +22,4 @@ class User < ActiveRecord::Base
       Wallet.create(user: self)
     end
 
-  end
-
 end
