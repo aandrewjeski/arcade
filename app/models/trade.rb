@@ -8,14 +8,10 @@ class Trade < ActiveRecord::Base
   validates :trade_type, presence: true
 
   def calculate_total_usd
-    if amount == nil || price == nil
-      nil
+    if trade_type == "buy"
+      amount * price * -1
     else
-      if trade_type == "buy"
-        amount * price * -1
-      else
-        amount * price
-      end
+      amount * price
     end
   end
 
@@ -24,14 +20,10 @@ class Trade < ActiveRecord::Base
   end
 
   def calculate_total_btc
-    if amount == nil || price == nil
-      nil
+    if trade_type == "buy"
+      amount
     else
-      if trade_type == "buy"
-        amount
-      else
-        amount * -1
-      end
+      amount * -1
     end
   end
 

@@ -18,12 +18,12 @@ RSpec.describe Trade, :type => :model do
   describe "adjust_trade" do
     it 'adjusts buy amount' do
       trade = FactoryGirl.build(:trade, amount: 1.5, price: 500, trade_type: "buy")
-      expect(trade.calculate_total).to eql(-750)
+      expect(trade.calculate_total_usd).to eql(-750)
     end
 
     it "adjusts sell amount" do
       trade = FactoryGirl.build(:trade, amount: 1.5, price: 500, trade_type: "sell")
-      expect(trade.calculate_total).to eql(750)
+      expect(trade.calculate_total_usd).to eql(750)
     end
   end
 
