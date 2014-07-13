@@ -5,7 +5,7 @@ class Wallet < ActiveRecord::Base
   def btc_total
     total = 0
     self.trades.each do |trade|
-       total += trade.calculate_total_btc
+      total += trade.calculate_total_btc
     end
     return total
   end
@@ -13,7 +13,7 @@ class Wallet < ActiveRecord::Base
   def usd_total
     total = 100000
     self.trades.each do |trade|
-       total += trade.calculate_total_usd
+      total += trade.calculate_total_usd
     end
     return total
   end
