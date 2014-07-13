@@ -24,6 +24,9 @@ gem 'devise'
 
 gem 'btce'
 
+#styling
+gem 'bootstrap-sass'
+
 group :doc do
   gem 'sdoc', require: false
 end
