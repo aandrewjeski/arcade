@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user views his or her own trades', %Q{
+feature 'user makes a trade', %Q{
   As a trader
   I want to be able to buy or sell coins
   So that I can make money
