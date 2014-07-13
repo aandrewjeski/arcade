@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: arcade_production
-  username: arcade
-  password: <%= ENV['ARCADE_DATABASE_PASSWORD'] %>
