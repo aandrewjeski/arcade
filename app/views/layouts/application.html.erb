@@ -9,12 +9,13 @@
 </head>
 <body>
 
+  <%= render 'layouts/header' %>
+
   <% if flash.any? %>
     <div class="notice"><%= flash[:notice] %></div>
     <div class="alert"><%= flash[:alert] %></div>
   <% end %>
 
-  <%= render 'layouts/header' %>
   <div class="container">
     <%= yield %>
   </div>
