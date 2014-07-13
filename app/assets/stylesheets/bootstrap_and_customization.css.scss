@@ -10,6 +10,17 @@ $jumbotron-bg:                                         white;
 
 @import 'bootstrap';
 
+body {
+  background: url('background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#000;
+    background-color:#fff;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
+
 .center {
      text-align: center;
 }
