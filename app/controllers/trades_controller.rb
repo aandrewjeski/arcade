@@ -3,7 +3,7 @@ class TradesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @trades = Trade.last(10)
+
   end
 
   def show

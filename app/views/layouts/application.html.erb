@@ -4,6 +4,7 @@
   <title>Arcade</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -11,19 +12,16 @@
 
   <%= render 'layouts/header' %>
 
-  <% if flash.any? %>
-    <div class="notice"><%= flash[:notice] %></div>
-    <div class="alert"><%= flash[:alert] %></div>
-  <% end %>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+         <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %>
+  </div>
 
   <div class="container">
     <%= yield %>
   </div>
 
-  <% if user_signed_in? %>
-    <%= link_to 'Edit Profile', edit_user_registration_path%>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-  <% end %>
-
+  <%= render 'layouts/footer' %>
 </body>
 </html>

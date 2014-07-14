@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "pages#home"
+  get "charts" => "pages#charts"
 
   devise_for :users
 

