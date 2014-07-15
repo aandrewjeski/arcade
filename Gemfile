@@ -24,6 +24,13 @@ gem 'devise'
 
 gem 'btce'
 
+gem 'chartkick'
+
+gem 'groupdate'
+
+#styling
+gem 'bootstrap-sass'
+
 group :doc do
   gem 'sdoc', require: false
 end

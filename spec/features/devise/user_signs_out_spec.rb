@@ -16,7 +16,7 @@ feature 'user signs out', %Q{
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Sign In'
+    click_button 'Sign In'
 
     expect(page).to have_content('Signed in successfully.')
 
