@@ -1,3 +1,5 @@
+require 'btce'
+
 class Trade < ActiveRecord::Base
   belongs_to :user
   belongs_to :wallet
@@ -7,11 +9,21 @@ class Trade < ActiveRecord::Base
   validates :user_id, presence: true
   validates :trade_type, presence: true
 
+  def find_price
+    ticker = Btce::Ticker.new "btc_usd"
+    ticker.avg
+  end
+
+  def update_price
+    update(price: find_price)
+  end
+
   def calculate_total_usd
+    ticker = Btce::Ticker.new "btc_usd"
     if trade_type == "buy"
-      amount * price * -1
+      amount * ticker.avg * -1
     else
-      amount * price
+      amount * ticker.avg
     end
   end
 

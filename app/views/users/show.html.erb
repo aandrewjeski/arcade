@@ -33,7 +33,7 @@
     <th>Time</th>
   </tr>
   <div>
-    <% @user.trades.each do |trade| %>
+    <% @trades.each do |trade| %>
       <tr>
       <td><%= trade.amount %> BTC</td>
       <td>$<%= trade.price %></td>
