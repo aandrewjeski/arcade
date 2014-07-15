@@ -11,7 +11,7 @@ $brand-primary:                                    #95a5a6;
 @import 'bootstrap';
 
 body {
-  background: url('background.png') no-repeat center center fixed;
+  background: image-url('background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
