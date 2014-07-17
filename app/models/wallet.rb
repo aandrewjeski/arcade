@@ -17,4 +17,12 @@ class Wallet < ActiveRecord::Base
     end
     return total
   end
+
+  def profits
+    profit = 0
+    self.trades.each do |trade|
+      profit += trade.calculate_total_usd
+    end
+    return profit
+  end
 end

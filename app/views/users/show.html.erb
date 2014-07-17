@@ -12,6 +12,7 @@
 <div>
 <p><strong>BTC BALANCE:</strong> <%= @user.default_wallet.btc_total %> BTC</p>
 <p><strong>USD BALANCE:</strong> $<%= @user.default_wallet.usd_total %></p>
+<p><strong>TOTAL PROFIT:</strong> $<%= @user.default_wallet.profits %></p>
 </div>
 <hr>
 
@@ -30,6 +31,7 @@
     <th>Amount</th>
     <th>Price</th>
     <th>Type</th>
+    <th>Total</th>
     <th>Time</th>
   </tr>
   <div>
@@ -38,6 +40,7 @@
       <td><%= trade.amount %> BTC</td>
       <td>$<%= trade.price %></td>
       <td><%= trade.trade_type %></td>
+      <td><%= trade.total %> USD</td>
       <td><%= trade.created_at %></td>
       </tr>
     <% end %>
