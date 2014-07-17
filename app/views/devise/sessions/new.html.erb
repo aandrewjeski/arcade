@@ -9,19 +9,12 @@
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.email_field :email, class: "form-control", :placeholder => "Email", :autofocus => true %>
       </div>
 
       <div class="form-group">
         <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <div class="checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
+        <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
       </div>
 
       <div class="form-group">

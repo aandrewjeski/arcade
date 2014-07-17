@@ -10,27 +10,27 @@
 
       <div class="form-group">
         <%= f.label :username %>
-        <%= f.text_field :username, class: "form-control", :autofocus => true %>
+        <%= f.text_field :username, class: "form-control", :placeholder => "Username", :autofocus => true %>
       </div>
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
+        <%= f.email_field :email, class: "form-control", :placeholder => "Email Address", :autofocus => true %>
       </div>
 
       <div class="form-group">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
+        <%= f.password_field :password, class: "form-control", :placeholder => "Password", :autocomplete => "off" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %> <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password_confirmation, class: "form-control", :autocomplete => "off" %>
+        <%= f.password_field :password_confirmation, class: "form-control", :placeholder => "Password Confirmation", :autocomplete => "off" %>
       </div>
 
       <div class="form-group">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-        <%= f.password_field :current_password, class: "form-control" %>
+        <%= f.password_field :current_password, class: "form-control", :placeholder => "Current Password" %>
       </div>
 
       <div class="form-group">

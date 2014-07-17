@@ -9,22 +9,22 @@
 
       <div class="form-group">
         <%= f.label :username %>
-        <%= f.text_field :username, class: "form-control" %>
+        <%= f.text_field :username, class: "form-control", :placeholder => "Username" %>
       </div>
 
       <div class="form-group">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => 'Email Address'%>
       </div>
 
       <div class="form-group">
         <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control" %>
+        <%= f.password_field :password, class: "form-control", :placeholder => "Password" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <%= f.password_field :password_confirmation, class: "form-control", :placeholder => "Password Confirmation"%>
       </div>
 
       <div class="form-group">

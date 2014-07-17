@@ -1,59 +1,68 @@
-<h3><%= @user.username %>'s Console</h3>
-<%= link_to 'Home', root_path %>
+<h2><%= @user.username %>'s Console</h2>
 
-<p>Username: <%= @user.username %></p>
-<p>E-mail: <%= @user.email %></p>
+<div class="jumbotron">
 
-<hr>
+  <p>Username: <%= @user.username %></p>
+  <p>E-mail: <%= @user.email %></p>
 
-<div>
-<h3> Wallet </h3>
-</div>
-<div>
-<p><strong>BTC BALANCE:</strong> <%= @user.default_wallet.btc_total %> BTC</p>
-<p><strong>USD BALANCE:</strong> $<%= @user.default_wallet.usd_total %></p>
-<p><strong>TOTAL PROFIT:</strong> $<%= @user.default_wallet.profits %></p>
-</div>
-<hr>
+  <hr>
 
-<div>
-  <h3> Trading Console </h3>
-</div>
-
-<%= link_to 'Buy/Sell Coins', new_user_trade_path(@user) %>
-
-<div>
-  <h4> Trade History </h4>
-</div>
-
-<table class="table table-bordered">
-  <tr>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Type</th>
-    <th>Total</th>
-    <th>Time</th>
-  </tr>
   <div>
-    <% @trades.each do |trade| %>
-      <tr>
-      <td><%= trade.amount %> BTC</td>
-      <td>$<%= trade.price %></td>
-      <td><%= trade.trade_type %></td>
-      <td><%= trade.total %> USD</td>
-      <td><%= trade.created_at %></td>
-      </tr>
-    <% end %>
+  <h3> Wallet </h3>
   </div>
-</table>
-<hr>
-<h3> Personal Statistics <h3>
-<div>
-  <h4> Trades by Day </h4>
-  <%= line_chart Trade.group_by_week(:created_at).count %>
+  <div>
+  <p><strong>BTC BALANCE:</strong> <%= @user.default_wallet.btc_total %> BTC</p>
+  <p><strong>USD BALANCE:</strong> $<%= @user.default_wallet.usd_total %></p>
+  <p><strong>TOTAL PROFIT:</strong> $<%= @user.default_wallet.profits %></p>
+  </div>
 </div>
 
-<div>
-  <h4> Buy/Sell Ratio </h4>
-  <%= pie_chart Trade.group(:trade_type).count %>
+<hr>
+
+<div class="jumbotron">
+  <div>
+    <h3> Trading Console </h3>
+  </div>
+
+  <%= link_to 'Buy/Sell Coins', new_user_trade_path(@user) %>
+
+  <div>
+    <h4> Trade History </h4>
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th>Total</th>
+      <th>Time</th>
+    </tr>
+    <div>
+      <% @trades.each do |trade| %>
+        <tr>
+        <td><%= trade.amount %> BTC</td>
+        <td>$<%= trade.price %></td>
+        <td><%= trade.trade_type %></td>
+        <td><%= trade.total %> USD</td>
+        <td><%= trade.created_at %></td>
+        </tr>
+      <% end %>
+    </div>
+  </table>
+</div>
+
+<hr>
+
+<div class="jumbotron">
+  <h3> Personal Statistics </h3>
+  <div>
+    <h4> Trades by Day </h4>
+    <%= line_chart Trade.group_by_week(:created_at).count %>
+  </div>
+
+  <div>
+    <h4> Buy/Sell Ratio </h4>
+    <%= pie_chart Trade.group(:trade_type).count %>
+  </div>
 </div>
