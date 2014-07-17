@@ -1,29 +1,23 @@
-<div class="container">
-  <div class="jumbotron" align="center">
-    <h3>Make a Trade</h3>
-    <%= form_for [@user, @trade] do |f| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h3>Make a Trade</h3>
+      <%= form_for [@user, @trade] do |f| %>
 
-      <% if @trade.errors.any? %>
-        <ul>
-          <% @trade.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      <% end %>
+        <p>USD/BTC: <%= @trade.find_price %></p>
 
-      <p>USD/BTC: <%= @trade.find_price %></p>
+        <div>
+          <%= f.label :amount %>
+          <%= f.text_field :amount %>
+        </div>
 
-      <div>
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
-      </div>
+        <div>
+          <%= f.label :trade_type %>
+          <%= f.select(:trade_type, ['buy', 'sell']) %>
+        </div>
 
-      <div>
-        <%= f.label :trade_type %>
-        <%= f.select(:trade_type, ['buy', 'sell']) %>
-      </div>
-
-      <%= f.submit 'Submit' %>
+        <%= f.submit 'Submit' %>
     <% end %>
+    </div>
   </div>
 </div>
