@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers'
-  gem 'rack-mini-profiler'
 end
 
 group :production do

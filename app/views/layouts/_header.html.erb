@@ -18,6 +18,7 @@
       <% if user_signed_in? %>
         <li><%= link_to "Account Settings", edit_user_registration_path %></li>
         <li><%= link_to "Account Console", user_path(@user) %></li>
+        <li><%= link_to "Trade", new_user_trade_path(@user) %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to 'Log In', new_user_session_path %></li>

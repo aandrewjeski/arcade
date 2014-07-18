@@ -31,6 +31,7 @@ body {
     margin-right: auto;
     padding-left:12px;
     padding-right:12px;
+    width:100%;
 }
 
 @media (min-width: 768px){
@@ -48,6 +49,13 @@ body {
     margin-right: auto;
     padding-left:12px;
     padding-right:12px;
+    width:65%;
+}
+
+.panel-default {
+  margin-left: auto;
+  margin-right: auto;
+  width:50%
 }
 
 .navbar-brand {

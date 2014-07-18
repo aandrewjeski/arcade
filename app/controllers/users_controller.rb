@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @wallet = current_user.wallet
+    @wallet = @user.wallet
     @trades = @wallet.trades.order(created_at: :desc).limit(10)
   end
 

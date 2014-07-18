@@ -24,7 +24,9 @@
     <h3> Trading Console </h3>
   </div>
 
-  <%= link_to 'Buy/Sell Coins', new_user_trade_path(@user) %>
+  <button type="button" class="btn pull-right">
+    <%= link_to 'Buy/Sell Coins', new_user_trade_path(@user) %>
+  </button>
 
   <div>
     <h4> Trade History </h4>
