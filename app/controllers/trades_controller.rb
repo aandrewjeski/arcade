@@ -18,10 +18,14 @@ class TradesController < ApplicationController
   def create
     @trade = current_user.trades.build(trade_params)
     @trade.wallet = current_user.default_wallet
-    @trade.update_price
-    @trade.update_total_usd
-    if @trade.save
+    if @trade.trade_type == "buy" && current_user.wallet.usd_total >= @trade.total && @trade.save
       redirect_to user_path(current_user), notice: "Your transaction was successfully processed."
+      @trade.update_price
+      @trade.update_total_usd
+    elsif @trade.trade_type == "sell" && current_user.wallet.btc_total >= @trade.amount && @trade.save
+      redirect_to user_path(current_user), notice: "Your transaction was successfully processed."
+      @trade.update_price
+      @trade.update_total_usd
     else
       redirect_to user_path(current_user), notice: "We were unable to process your transaction."
     end
