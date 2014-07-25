@@ -2,10 +2,6 @@ class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  def index
-
-  end
-
   def show
     @trade = Trade.find(params[:id])
   end
@@ -13,7 +9,7 @@ class TradesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @trade = Trade.new
-  end
+  endz
 
   def create
     @trade = current_user.trades.build(trade_params)

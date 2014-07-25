@@ -28,6 +28,8 @@ gem 'chartkick'
 
 gem 'groupdate'
 
+gem 'sidekiq'
+
 #styling
 gem 'bootstrap-sass'
 
